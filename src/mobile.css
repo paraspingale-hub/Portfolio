@@ -1,0 +1,106 @@
+/* src/mobile.css */
+
+@media (max-width: 940px) {
+  .topbar { width: min(100% - 40px, 740px); grid-template-columns: 1fr auto; }
+  .navigation { position: absolute; right: 0; top: 72px; width: min(340px, calc(100vw - 40px)); flex-direction: column; align-items: stretch; border-radius: 20px; padding: 16px; transform: translateY(-8px); opacity: 0; visibility: hidden; transition: .2s; }
+  .navigation.is-open { opacity: 1; transform: translateY(0); visibility: visible; }
+  .navigation button { text-align: left; width: 100%; padding: 14px 18px; font-size: 15px; }
+  .nav-separator { height: 1px; width: 100%; margin: 8px 0; }
+  .menu-toggle { display: grid; place-content: center; gap: 6px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 50%; }
+  .menu-toggle span { width: 18px; height: 2px; background: var(--text); }
+  .brand-copy, .brand-divider { display: none; }
+  .header-actions { gap: 12px; }
+  .hero { padding-top: 120px; }
+  .meta-row { padding: 0 24px 32px; }
+  .scroll-cue { display: none; }
+  
+  .system-map { padding-top: 92px; padding-bottom: 36px; }
+  .system-stage { grid-template-columns: 1fr; height: auto; gap: 40px; }
+  .desktop-setup { grid-row: 1; grid-column: 1; }
+  .path-links { grid-column: 1; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0; }
+  .path-left { grid-row: 2; }
+  .path-right { grid-row: 3; }
+  .path-left a { margin-left: 0; }
+  .path-links a { width: auto; font-size: 13px; padding: 10px; }
+  .path-links a b { display: none; }
+  .circuit-arrows { display: none; }
+  .contact-dock { margin-top: 40px; }
+}
+
+@media (max-width: 800px) {
+  /* About Page Refinements */
+  .about-hero-section, .about-life-section { width: min(100% - 48px, 620px); grid-template-columns: 1fr; gap: 60px; }
+  .about-hero-section { padding: 100px 0 80px; }
+  .about-hero-section h1, .about-life-section h2 { letter-spacing: -2px; font-size: clamp(40px, 8vw, 75px); }
+  .about-photo-professional, .about-photo-personal { max-width: 100%; justify-self: center; }
+  .about-photo-personal { background: transparent; }
+  .about-photo img { height: auto; aspect-ratio: 4/5; }
+  .about-life-section { padding: 80px 0; }
+  .about-photo-personal img { height: auto; aspect-ratio: 1/1; }
+  .about-code pre { font-size: 12px; padding: 24px; }
+  .about-role-line { font-size: 11px; }
+}
+
+@media (max-width: 760px) {
+  /* Projects Page */
+  .projects-page { padding: 90px 24px; }
+  .projects-intro { margin-bottom: 50px; }
+  .projects-intro h1 { font-size: clamp(44px, 12vw, 80px); }
+  .project-list { gap: 80px; }
+  .project-row, .project-row.is-reversed { grid-template-columns: 1fr; gap: 32px; }
+  .project-row.is-reversed .project-stack { grid-column: 1; }
+  .project-row.is-reversed .project-description { grid-column: 1; grid-row: auto; text-align: left; }
+  .project-row.is-reversed .project-description ul { margin-left: 0; }
+  .project-row.is-reversed .project-description a { justify-content: flex-start; }
+  .project-stack { max-width: 100%; aspect-ratio: 16/10; }
+  .stack-label { margin-top: 15%; font-size: 11px; }
+  .stack-name { font-size: 32px; max-width: 90%; }
+  .project-description h2 { letter-spacing: -1px; font-size: 32px; }
+  .project-description li { font-size: 15px; line-height: 1.6; }
+
+  /* Tech Stack Page */
+  .tech-page { padding: 90px 24px; }
+  .tech-groups { grid-template-columns: 1fr; gap: 60px; }
+  .tech-group h2 { margin-bottom: 24px; font-size: 14px; }
+  .tech-items { gap: 20px; justify-content: center; }
+  .tech-item { width: 80px; }
+  .tech-item i { width: 60px; }
+  .tech-item p { font-size: 10px; }
+
+  /* Build Process Page */
+  .building-section { padding: 60px 20px; }
+  .building-panel { min-height: auto; padding: 40px 24px; border-radius: 16px; }
+  .building-panel h2 { font-size: 36px; }
+  .principles-grid { grid-template-columns: 1fr; gap: 50px; margin-top: 40px; }
+  .principle-card p { margin-top: 16px; font-size: 15px; line-height: 1.6; }
+  .build-filters { gap: 10px; margin-top: 30px; }
+  .build-filters button { padding: 12px 18px; font-size: 14px; }
+
+  /* Certifications Page */
+  .certifications-page { padding: 90px 24px; }
+  .cert-intro h1 { font-size: 40px; }
+  .cert-grid { grid-template-columns: 1fr; gap: 24px; }
+  .cert-card-inner { padding: 24px 20px; }
+
+  /* Global Back Button */
+  .global-back-btn { top: 16px; right: 20px; padding: 10px 16px; }
+  .global-back-btn span { display: inline-block; font-size: 11px; }
+}
+
+@media (max-width: 560px) {
+  /* Hero & Footer adjustments */
+  .topbar { margin-top: 16px; }
+  .theme-toggle { width: 60px; height: 40px; }
+  .theme-toggle .moon { width: 32px; height: 32px; }
+  .hero { justify-content: center; padding: 80px 20px 60px; }
+  .hero h1 { font-size: 13vw; }
+  .eyebrow { letter-spacing: 2px; font-size: 10px; }
+  .hero-bottom-copy > p:first-child { max-width: 100%; line-height: 1.8; font-size: 12px; }
+  .signature { margin-top: 12px; font-size: 18px; }
+  .meta-row { display: flex; flex-direction: column; gap: 24px; padding: 0 20px 30px; text-align: center; align-items: center; }
+  .location, .role { gap: 12px; flex-direction: column; }
+  .location p, .role p { font-size: 12px; }
+  .location span, .role span { font-size: 10px; }
+  .maharashtra-mark { width: 45px; }
+  .role-icon { display: block; margin: 0 auto; }
+}

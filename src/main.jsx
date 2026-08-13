@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import professionalPhoto from './myimage.jpeg';
 import personalPhoto from './nonprofessional.jpg';
 import './styles.css';
+import './mobile.css';
 
 const navItems = ['Home', 'About', 'Work', 'Blogs'];
 
