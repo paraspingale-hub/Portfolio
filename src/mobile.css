@@ -17,11 +17,11 @@
   .system-map { padding-top: 92px; padding-bottom: 36px; }
   .system-stage { grid-template-columns: 1fr; height: auto; gap: 40px; }
   .desktop-setup { grid-row: 1; grid-column: 1; }
-  .path-links { grid-column: 1; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0; }
+  .path-links { grid-column: 1; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0; display: grid; }
   .path-left { grid-row: 2; }
   .path-right { grid-row: 3; }
   .path-left a { margin-left: 0; }
-  .path-links a { width: auto; font-size: 13px; padding: 10px; }
+  .path-links a { width: auto; font-size: 11px; padding: 12px 10px; text-align: center; }
   .path-links a b { display: none; }
   .circuit-arrows { display: none; }
   .contact-dock { margin-top: 40px; }
