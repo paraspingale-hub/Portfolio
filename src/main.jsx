@@ -371,6 +371,104 @@ function AboutPage() {
   );
 }
 
+const certificatesData = [
+  {
+    category: 'Bootcamps & Masterclasses',
+    items: [
+      { title: 'AR VR Bootcamp', file: '/certificates/AR VR Bootcamp certificate.pdf', type: 'pdf' },
+      { title: 'Scaler Masterclass MAANG', file: '/certificates/Scaler_masterclass_MAANG certificate.png', type: 'image' }
+    ]
+  },
+  {
+    category: 'Programming Languages',
+    items: [
+      { title: 'Java Participant Certificate', file: '/certificates/PARAS-PINGALE-Participant-Certificate JAVA.pdf', type: 'pdf' },
+      { title: 'Python Participant Certificate', file: '/certificates/PARAS-PINGALE-Participant-Certificate python.pdf', type: 'pdf' },
+      { title: 'Spoken Tutorial Java', file: '/certificates/SpokenTutorial_Java.png', type: 'image' },
+      { title: 'Spoken Tutorial Python', file: '/certificates/SpokenTutorial_Python.png', type: 'image' },
+      { title: 'Spoken Tutorial JS', file: '/certificates/Spoken_tutorial_JS_participation.pdf', type: 'pdf' },
+      { title: 'Udemy C++ Course', file: '/certificates/udemy cpp course certificate.pdf', type: 'pdf' }
+    ]
+  },
+  {
+    category: 'Machine Learning & AI',
+    items: [
+      { title: 'FreeCodeCamp ML in Python', file: '/certificates/Freecodecamp_MlinPython.png', type: 'image' },
+      { title: 'GFG GenAI ChatGPT Course', file: '/certificates/GFG_GenAI_chatgpt_cource.pdf', type: 'pdf' }
+    ]
+  },
+  {
+    category: 'Software Engineering & Job Simulations',
+    items: [
+      { title: 'EA Software Engineering Job Sim', file: '/certificates/EA_Software Engineering Job Simulation.pdf', type: 'pdf' },
+      { title: 'Forage Completion', file: '/certificates/paras pingale_Completion.pdf', type: 'pdf' },
+      { title: 'FreeCodeCamp Certification', file: '/certificates/Freecodecamp Certification.png', type: 'image' }
+    ]
+  }
+];
+
+function CertificationsPage() {
+  const [filter, setFilter] = useState('All');
+  const categories = ['All', ...certificatesData.map(c => c.category)];
+  
+  const visibleCertificates = filter === 'All' 
+    ? certificatesData.flatMap(c => c.items)
+    : certificatesData.find(c => c.category === filter)?.items || [];
+
+  return (
+    <main className="certifications-page">
+      <a className="cert-back" href="#home">← Back to portfolio</a>
+      <header className="cert-intro">
+        <p><span>★</span> ACHIEVEMENTS</p>
+        <h1>Certifications</h1>
+      </header>
+      
+      <div className="cert-filters" role="tablist" aria-label="Certification categories">
+        {categories.map(cat => (
+          <button 
+            key={cat} 
+            className={filter === cat ? 'is-active' : ''} 
+            onClick={() => setFilter(cat)}
+            role="tab"
+            aria-selected={filter === cat}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <section className="cert-grid" aria-label="Certificates list">
+        {visibleCertificates.map(cert => (
+          <a 
+            key={cert.title} 
+            className="cert-card" 
+            href={cert.file} 
+            target="_blank" 
+            rel="noreferrer" 
+            aria-label={`View ${cert.title}`}
+          >
+            <div className="cert-card-inner">
+              <div className="cert-image-container">
+                {cert.type === 'image' ? (
+                  <img src={cert.file} alt={cert.title} className="cert-thumbnail" loading="lazy" />
+                ) : (
+                  <div className="cert-pdf-placeholder">
+                    <svg viewBox="0 0 24 24" className="cert-pdf-icon"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    <span>PDF Document</span>
+                  </div>
+                )}
+              </div>
+              <h3>{cert.title}</h3>
+              <span className="cert-view">View ↗</span>
+            </div>
+            <div className="cert-glow" aria-hidden="true"></div>
+          </a>
+        ))}
+      </section>
+    </main>
+  );
+}
+
 function App() {
   const [theme, setTheme] = useState('dark');
   const [active, setActive] = useState('Home');
@@ -380,6 +478,7 @@ function App() {
   const [isProjectsPage, setIsProjectsPage] = useState(() => window.location.hash === '#projects');
   const [isTechPage, setIsTechPage] = useState(() => window.location.hash === '#tech-stack');
   const [isAboutPage, setIsAboutPage] = useState(() => window.location.hash === '#about');
+  const [isCertPage, setIsCertPage] = useState(() => window.location.hash === '#certifications');
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -391,11 +490,13 @@ function App() {
       const showingProjectsPage = window.location.hash === '#projects';
       const showingTechPage = window.location.hash === '#tech-stack';
       const showingAboutPage = window.location.hash === '#about';
+      const showingCertPage = window.location.hash === '#certifications';
       setIsBuildPage(showingBuildPage);
       setIsProjectsPage(showingProjectsPage);
       setIsTechPage(showingTechPage);
       setIsAboutPage(showingAboutPage);
-      if (showingBuildPage || showingProjectsPage || showingTechPage || showingAboutPage) window.scrollTo(0, 0);
+      setIsCertPage(showingCertPage);
+      if (showingBuildPage || showingProjectsPage || showingTechPage || showingAboutPage || showingCertPage) window.scrollTo(0, 0);
     };
     window.addEventListener('hashchange', syncBuildPage);
     return () => window.removeEventListener('hashchange', syncBuildPage);
@@ -420,6 +521,10 @@ function App() {
 
   if (isAboutPage) {
     return <AboutPage />;
+  }
+
+  if (isCertPage) {
+    return <CertificationsPage />;
   }
 
   return (
