@@ -482,6 +482,7 @@ function App() {
   const [theme, setTheme] = useState('dark');
   const [active, setActive] = useState('Home');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [buildFilter, setBuildFilter] = useState('all');
   const [isBuildPage, setIsBuildPage] = useState(() => window.location.hash === '#building');
   const [isProjectsPage, setIsProjectsPage] = useState(() => window.location.hash === '#projects');
@@ -514,6 +515,10 @@ function App() {
   const selectNav = (item) => {
     setActive(item);
     setMenuOpen(false);
+    setMoreOpen(false);
+    if (item === 'Home') window.location.hash = '#home';
+    if (item === 'About') window.location.hash = '#about';
+    if (item === 'Work') window.location.hash = '#projects';
   };
 
   if (isBuildPage) {
@@ -551,7 +556,16 @@ function App() {
           {navItems.map((item) => (
             <button key={item} className={active === item ? 'active' : ''} onClick={() => selectNav(item)}>{item}</button>
           ))}
-          <button onClick={() => selectNav('More')} className="more-link">More <span>⌄</span></button>
+          <div className="more-dropdown-container">
+            <button onClick={() => setMoreOpen(!moreOpen)} className="more-link">More <span>⌄</span></button>
+            {moreOpen && (
+              <div className="more-dropdown">
+                <a href="/resume/Resume.pdf" download="Paras_Pingale_Resume.pdf" onClick={() => setMoreOpen(false)}>
+                  Download my Resume
+                </a>
+              </div>
+            )}
+          </div>
           <span className="nav-separator" />
           <button className="availability" aria-label="Availability status"><i /> Available</button>
         </nav>
