@@ -110,6 +110,15 @@ function ConstellationCanvas() {
   return <canvas className="constellation" ref={canvasRef} aria-hidden="true" />;
 }
 
+function BackButton() {
+  return (
+    <a className="global-back-btn" href="#home" aria-label="Back to home">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Back</span>
+    </a>
+  );
+}
+
 function MaharashtraMark() {
   return (
     <svg className="maharashtra-mark" viewBox="0 0 106 72" role="img" aria-label="Maharashtra">
@@ -183,7 +192,7 @@ function BuildProcess({ filter, onFilterChange, isStandalone = false }) {
   return (
     <section className={`building-section ${isStandalone ? 'is-full-page' : ''}`} id="building-section" aria-labelledby="building-title">
       <div className="building-panel">
-        {isStandalone && <a className="build-back" href="#home">← Back to portfolio</a>}
+        {isStandalone && <BackButton />}
         <p className="section-kicker"><span /> BUILDING SECTION</p>
         <h2 id="building-title">How I build software.</h2>
         <div className="build-filters" role="tablist" aria-label="Building process categories">
@@ -273,7 +282,7 @@ const projects = [
 function ProjectPage() {
   return (
     <main className="projects-page">
-      <a className="projects-back" href="#home">← Back to portfolio</a>
+      <BackButton />
       <header className="projects-intro"><p>SELECTED WORK / 2026</p><h1>Project section</h1></header>
       <section className="project-list" aria-label="Selected projects">
         {projects.map((project, index) => (
@@ -318,7 +327,7 @@ function TechLogo({ name, logo }) {
 function TechStackPage() {
   return (
     <main className="tech-page">
-      <a className="tech-back" href="#home">← Back to portfolio</a>
+      <BackButton />
       <header className="tech-intro"><p><span>&lt;&gt;</span> SKILLS</p><h1>My technical expertise</h1></header>
       <section className="tech-groups" aria-label="Technical expertise">
         {techGroups.map((group) => (
@@ -341,7 +350,7 @@ function TechStackPage() {
 function AboutPage() {
   return (
     <main className="about-page">
-      <a className="about-back" href="#home">← Back to portfolio</a>
+      <BackButton />
       <section className="about-hero-section">
         <div className="about-code-wrap">
           <p className="about-eyebrow">PARAS RAHUL PINGALE&nbsp; // &nbsp;AI / ML ENGINEER&nbsp; // &nbsp;PUNE</p>
@@ -417,7 +426,7 @@ function CertificationsPage() {
 
   return (
     <main className="certifications-page">
-      <a className="cert-back" href="#home">← Back to portfolio</a>
+      <BackButton />
       <header className="cert-intro">
         <p><span>★</span> ACHIEVEMENTS</p>
         <h1>Certifications</h1>
