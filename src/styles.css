@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
-:root { color-scheme: dark; --bg: #070808; --surface: rgba(14,16,16,.76); --text: #f4f3f1; --muted: #9a9d9c; --line: rgba(255,255,255,.14); --accent: #ff6b16; --spot: rgba(255,107,22,.1); }
+:root { color-scheme: dark; --bg: #070808; --surface: rgba(14,16,16,.76); --text: #8cb0b7; --muted: #9a9d9c; --line: rgba(255,255,255,.14); --accent: #ff6b16; --spot: rgba(255,107,22,.1); }
 :root[data-theme='light'] { color-scheme: light; --bg: #f2f0eb; --surface: rgba(255,255,255,.75); --text: #121313; --muted: #656968; --line: rgba(17,18,18,.16); --accent: #d94f00; --spot: rgba(255,107,22,.13); }
 * { box-sizing: border-box; }
 html, body, #root { width: 100%; min-height: 100%; margin: 0; }

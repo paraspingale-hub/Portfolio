@@ -1,6 +1,7 @@
 package com.paraspingale.portfolio;
 
 import java.util.Map;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProfileController {
   @GetMapping("/profile")
   public Map<String, String> profile() {
-    return Map.of("name", "Paras Rahul Pingale", "location", "Pune, Maharashtra, India");
+    return Map.of("name", "Para Rahul Pingale", "location", "Pune, Maharashtra, India");
   }
 }
