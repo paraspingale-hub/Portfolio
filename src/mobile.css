@@ -92,7 +92,7 @@
   .topbar { margin-top: 16px; }
   .theme-toggle { width: 60px; height: 40px; }
   .theme-toggle .moon { width: 32px; height: 32px; }
-  .hero { justify-content: center; padding: 80px 20px 60px; }
+  .hero { justify-content: center; padding: 80px 20px 30px; }
   .hero h1 { font-size: 13vw; }
   .eyebrow { letter-spacing: 2px; font-size: 10px; }
   .hero-bottom-copy > p:first-child { max-width: 100%; line-height: 1.8; font-size: 12px; }
