@@ -97,6 +97,9 @@
   .eyebrow { letter-spacing: 2px; font-size: 10px; }
   .hero-bottom-copy > p:first-child { max-width: 100%; line-height: 1.8; font-size: 12px; }
   .signature { margin-top: 12px; font-size: 18px; }
+  .hero-resume { margin-top: 24px; }
+  .resume-hero-btn { padding: 10px 22px; font-size: 12px; }
+  .resume-hero-btn span { font-size: 14px; }
   .meta-row { display: flex; flex-direction: column; gap: 24px; padding: 0 20px 30px; text-align: center; align-items: center; }
   .location, .role { gap: 12px; flex-direction: column; }
   .location p, .role p { font-size: 12px; }

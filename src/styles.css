@@ -193,3 +193,40 @@ h1 { margin: 0; display: grid; line-height: .84; font-family: 'Manrope', Arial, 
   background: rgba(255,107,22, 0.15);
   color: var(--accent);
 }
+
+/* Resume Hero Button */
+.hero-resume { margin-top: 30px; display: flex; justify-content: center; }
+.resume-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.resume-hero-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 22, 0.15);
+  background: rgba(255, 107, 22, 0.05);
+}
+.resume-hero-btn span {
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+.resume-hero-btn:hover span {
+  transform: translate(3px, -3px);
+}

@@ -585,6 +585,9 @@ function App() {
         <div className="hero-bottom-copy">
           <p>DEVELOPER&nbsp; • &nbsp;CREATOR&nbsp; • &nbsp;THINKER&nbsp; • &nbsp;LEARNER</p>
           <p className="signature">making ideas <em>move.</em></p>
+          <div className="hero-resume">
+            <a href="/resume/Resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-hero-btn">Resume <span>↗</span></a>
+          </div>
         </div>
       </section>
 
