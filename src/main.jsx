@@ -151,13 +151,23 @@ function DesktopSetup() {
 
 function SocialIcon({ type, href, title, children }) {
   return (
-    <a className={`social-link ${type}`} href={href} target={type === 'email' ? undefined : '_blank'} rel={type === 'email' ? undefined : 'noreferrer'} aria-label={title}>
+    <a className={`social-link ${type}`} href={href} target="_blank" rel="noreferrer" aria-label={title}>
       <span className="social-symbol">{children}</span>
       <span className="social-preview" aria-hidden="true">
         <span className="preview-top"><i /> {type === 'linkedin' ? 'linkedin.com/in/paraspingale' : type === 'github' ? 'github.com/paraspingale-hub' : 'paraspingales@gmail.com'}</span>
         <span className="preview-content"><b>{type === 'linkedin' ? 'Paras Rahul Pingale' : type === 'github' ? 'paras pingale' : 'Let’s build together'}</b><small>{type === 'linkedin' ? 'Developer · Creator · Thinker' : type === 'github' ? 'repositories / projects / experiments' : 'Click to compose an email'}</small></span>
       </span>
     </a>
+  );
+}
+
+function SocialLinksList({ className = 'social-links' }) {
+  return (
+    <div className={className}>
+      <SocialIcon type="linkedin" href="https://www.linkedin.com/in/paraspingale" title="Visit Paras Pingale on LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.5 8.4H3.2V21h3.3V8.4zM4.8 3A1.9 1.9 0 1 0 4.8 6.8 1.9 1.9 0 0 0 4.8 3zM20.9 13.8c0-3.8-2-5.6-4.7-5.6-2.2 0-3.1 1.2-3.6 2v-1.8H9.3V21h3.3v-6.2c0-1.6.3-3.2 2.3-3.2 2 0 2 1.8 2 3.3V21h3.3v-7.2z" /></svg></SocialIcon>
+      <SocialIcon type="github" href="https://github.com/paraspingale-hub" title="Visit Paras Pingale on GitHub"><svg viewBox="0 0 24 24"><path d="M12 2.4A9.6 9.6 0 0 0 9 21.1c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.6.4-1.1.7-1.3-2.3-.3-4.7-1.1-4.7-5a3.9 3.9 0 0 1 1-2.7c-.1-.2-.4-1.2.1-2.7 0 0 .8-.3 2.8 1.1a9.8 9.8 0 0 1 5.1 0c2-1.4 2.8-1.1 2.8-1.1.5 1.5.2 2.5.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.8-2.4 4.7-4.7 5 .4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5A9.6 9.6 0 0 0 12 2.4z" /></svg></SocialIcon>
+      <SocialIcon type="email" href="https://mail.google.com/mail/?view=cm&fs=1&to=paraspingales%40gmail.com" title="Compose an email to paraspingales@gmail.com"><svg viewBox="0 0 24 24"><path d="M3.1 5.5h17.8c.7 0 1.2.5 1.2 1.2v10.6c0 .7-.5 1.2-1.2 1.2H3.1c-.7 0-1.2-.5-1.2-1.2V6.7c0-.7.5-1.2 1.2-1.2zm.5 2.1v.2l8.4 5.8 8.4-5.8v-.2H3.6zm16.8 8.8V9.8L12 15.6 3.6 9.8v6.6h16.8z" /></svg></SocialIcon>
+    </div>
   );
 }
 
@@ -572,6 +582,7 @@ function App() {
         </nav>
 
         <div className="header-actions">
+          <SocialLinksList className="social-links top-social-links" />
           <button className="theme-toggle" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label="Toggle light and dark mode">
             <span className="sun">☼</span><span className="moon">☾</span>
           </button>
@@ -622,11 +633,7 @@ function App() {
         </div>
         <div className="contact-dock">
           <p><span /> INTERLINKED WITH WHAT I BUILD</p>
-          <div className="social-links">
-            <SocialIcon type="linkedin" href="https://www.linkedin.com/in/paraspingale" title="Visit Paras Pingale on LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.5 8.4H3.2V21h3.3V8.4zM4.8 3A1.9 1.9 0 1 0 4.8 6.8 1.9 1.9 0 0 0 4.8 3zM20.9 13.8c0-3.8-2-5.6-4.7-5.6-2.2 0-3.1 1.2-3.6 2v-1.8H9.3V21h3.3v-6.2c0-1.6.3-3.2 2.3-3.2 2 0 2 1.8 2 3.3V21h3.3v-7.2z" /></svg></SocialIcon>
-            <SocialIcon type="github" href="https://github.com/paraspingale-hub" title="Visit Paras Pingale on GitHub"><svg viewBox="0 0 24 24"><path d="M12 2.4A9.6 9.6 0 0 0 9 21.1c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.6.4-1.1.7-1.3-2.3-.3-4.7-1.1-4.7-5a3.9 3.9 0 0 1 1-2.7c-.1-.2-.4-1.2.1-2.7 0 0 .8-.3 2.8 1.1a9.8 9.8 0 0 1 5.1 0c2-1.4 2.8-1.1 2.8-1.1.5 1.5.2 2.5.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.8-2.4 4.7-4.7 5 .4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5A9.6 9.6 0 0 0 12 2.4z" /></svg></SocialIcon>
-            <SocialIcon type="email" href="https://mail.google.com/mail/?view=cm&fs=1&to=paraspingales%40gmail.com" title="Compose an email to paraspingales@gmail.com"><svg viewBox="0 0 24 24"><path d="M3.1 5.5h17.8c.7 0 1.2.5 1.2 1.2v10.6c0 .7-.5 1.2-1.2 1.2H3.1c-.7 0-1.2-.5-1.2-1.2V6.7c0-.7.5-1.2 1.2-1.2zm.5 2.1v.2l8.4 5.8 8.4-5.8v-.2H3.6zm16.8 8.8V9.8L12 15.6 3.6 9.8v6.6h16.8z" /></svg></SocialIcon>
-          </div>
+          <SocialLinksList />
         </div>
       </section>
     </main>

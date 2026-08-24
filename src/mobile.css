@@ -9,6 +9,7 @@
   .menu-toggle { display: grid; place-content: center; gap: 6px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 50%; }
   .menu-toggle span { width: 18px; height: 2px; background: var(--text); }
   .brand-copy, .brand-divider { display: none; }
+  .top-social-links { display: none !important; }
   .header-actions { gap: 12px; }
   .hero { padding-top: 120px; }
   .meta-row { padding: 0 24px 32px; }
