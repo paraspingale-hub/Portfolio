@@ -287,6 +287,16 @@ const projects = [
     stack: ['Python', 'Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning'],
     github: 'https://github.com/paraspingale-hub/Machine_LearningCaseStudy',
     highlights: ['A collection of machine-learning case studies that clarify the working and flow of model building across supervised, unsupervised, and reinforcement learning.']
+  },
+  {
+    title: 'AI-Powered Loan Advisory Platform',
+    stack: ['Next.js', 'FastAPI', 'Supabase pgvector', 'Groq Llama 3.3', 'Tailwind CSS', 'Zustand', 'Sentence Transformers'],
+    github: 'https://github.com/paraspingale-hub/Cognizant_Hackathon',
+    highlights: [
+      'Built a GenAI loan advisor that uses RAG with Supabase pgvector to retrieve banking policies and generate context-aware, personalized loan recommendations.',
+      'Implemented deterministic eligibility checks with DTI/FOIR and credit-band assessment to match customers with suitable loan schemes.',
+      'Created a banker dashboard that converts interested customers into HOT, WARM, or NURTURE leads, with prioritized summaries and AI-generated follow-up talking points.'
+    ]
   }
 ];
 
