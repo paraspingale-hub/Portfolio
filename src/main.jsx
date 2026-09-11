@@ -430,6 +430,7 @@ const certificatesData = [
   {
     category: 'Software Engineering & Job Simulations',
     items: [
+      { title: 'Apna College Full Stack Development', file: '/certificates/ApnaCollege(FullStack).pdf', type: 'pdf' },
       { title: 'EA Software Engineering Job Sim', file: '/certificates/EA_Software Engineering Job Simulation.pdf', type: 'pdf' },
       { title: 'Forage Completion', file: '/certificates/paras pingale_Completion.pdf', type: 'pdf' },
       { title: 'FreeCodeCamp Certification', file: '/certificates/Freecodecamp Certification.png', type: 'image' }
